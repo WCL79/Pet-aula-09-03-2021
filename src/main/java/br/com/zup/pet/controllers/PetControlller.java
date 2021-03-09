@@ -25,5 +25,8 @@ public class PetControlller {
         return  petService.cadastrarAnimal(pet);
     }
 
-
+    @GetMapping("{nome}/")
+    public Pet pesquisarPesquisarAnimanial(@PathVariable String nome){
+        return  petService.buscarAnimalOuDono(nome);
+    }
 }

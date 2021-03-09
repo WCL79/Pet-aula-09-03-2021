@@ -14,4 +14,13 @@ public class PetService {
         animais.add(estimacao);
         return estimacao;
     }
+
+    public Pet buscarAnimalOuDono(String nome) {
+        for (Pet pet : animais) {
+            if (pet.getNomeDoDono().equalsIgnoreCase(nome) || pet.getNomeDoDono().equalsIgnoreCase(nome)) {
+                return pet;
+            }
+        }
+        throw new RuntimeException("Não foram localizado!");
+    }
 }
