@@ -25,7 +25,13 @@ public class PetControlller {
     }
 
     @GetMapping("{nome}/")
-    public Pet pesquisarPesquisarAnimanial(@PathVariable String nome){
-        return  petService.buscarAnimalOuDono(nome);
+    public Pet pesquisarPesquisarAnimanial(@PathVariable String nomeAnimalDono){
+        return  petService.buscarAnimalOuDono(nomeAnimalDono);
     }
+
+    @GetMapping("{email}/")
+    public Pet pesquisarEmailDoDono(@PathVariable String emailDono){
+        return petService.buscarEmailDoDono(emailDono);
+    }
+
 }
