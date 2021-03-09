@@ -24,10 +24,19 @@ public class PetService {
         throw new RuntimeException("Não foram localizado!");
     }
 
-    public Pet buscarAnimalOuDono(String nome) {
-        for (Pet petNome : animais) {
-            if (petNome.getNomeDoDono().equalsIgnoreCase(nome) || petNome.getNome().equalsIgnoreCase(nome)) {
-                return petNome;
+    public Pet buscarNomeDono(String nome) {
+        for (Pet petNomeDono : animais) {
+            if (petNomeDono.getNomeDoDono().equalsIgnoreCase(nome)) {
+                return petNomeDono;
+            }
+        }
+        throw new RuntimeException("Não foram localizado!");
+    }
+
+    public Pet buscarNomeDoAnimal(String nomeAnimal) {
+        for (Pet petNomeAnimal : animais) {
+            if (petNomeAnimal.getNomeDoDono().equalsIgnoreCase(nomeAnimal)) {
+                return petNomeAnimal;
             }
         }
         throw new RuntimeException("Não foram localizado!");
