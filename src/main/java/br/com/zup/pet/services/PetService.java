@@ -15,10 +15,19 @@ public class PetService {
         return estimacao;
     }
 
+    public Pet buscarEmailDoDono(String email){
+        for(Pet petEmail : animais){
+            if(petEmail.getEmailDoDono().equalsIgnoreCase(email)){
+                return  petEmail;
+            }
+        }
+        throw new RuntimeException("Não foram localizado!");
+    }
+
     public Pet buscarAnimalOuDono(String nome) {
-        for (Pet pet : animais) {
-            if (pet.getNomeDoDono().equalsIgnoreCase(nome) || pet.getNomeDoDono().equalsIgnoreCase(nome)) {
-                return pet;
+        for (Pet petNome : animais) {
+            if (petNome.getNomeDoDono().equalsIgnoreCase(nome) || petNome.getNome().equalsIgnoreCase(nome)) {
+                return petNome;
             }
         }
         throw new RuntimeException("Não foram localizado!");

@@ -12,7 +12,6 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("animais/")
 public class PetControlller {
-
     /*
         Atributos referente ao PetService
      */
