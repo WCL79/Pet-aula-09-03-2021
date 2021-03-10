@@ -1,5 +1,11 @@
 package br.com.zup.pet.services;
-
+/**
+ * Classe service tipo PetService com métodos responsaveis pela regra negocio
+ * referente: inserção de novo Objeto Pet, Visualização de Objetos por meio: email, nome do pet ou nome do dono.
+ * E excluir o Objeto Pet.
+ * @author Weslley.candido
+ * @version 0.01
+ */
 import br.com.zup.pet.model.Pet;
 import org.springframework.stereotype.Service;
 

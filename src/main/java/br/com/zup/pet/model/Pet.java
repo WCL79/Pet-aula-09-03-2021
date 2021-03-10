@@ -1,15 +1,21 @@
 package br.com.zup.pet.model;
+/**
+ * Classe modelo tipo Pet com atributos com responsabilidades de validações
+ * @author Weslley.candido
+ * @version 0.01
+ */
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class Pet {
-    @NotEmpty(message = "Campo do nome não pode estar vazio!")
+    @NotBlank(message = "Campo do nome não pode estar vazio!")
     private String nome;
 
-    @NotEmpty(message = "Campo da raça não pode ser vazio!")
+    @NotBlank(message = "Campo da raça não pode ser vazio!")
     @NotNull(message = "O campo raça não foi informada")
     private String raca;
 

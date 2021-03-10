@@ -15,7 +15,13 @@ public class ObjetoDeErro {
      */
     public ObjetoDeErro() {
     }
-
+    /**
+     * Construtor com parametro vazio
+     */
+    public ObjetoDeErro(String notificacao, String campo) {
+        this.notificacao = notificacao;
+        this.campo = campo;
+    }
     /**
      * Os geteres e seteres devem ser aplicados respeitando padrão JavaBean
      * @return
