@@ -4,6 +4,7 @@ package br.com.zup.pet.exceptions;
  * @author Weslley.candido
  * @version 0.01
  * Classe responsavel pela criação de objetos de ERROS
+ * As mensagem serão encaminhadas ao usuário no formato JSON
  */
 public class ObjetoDeErro {
     private String notificacao;
