@@ -45,10 +45,11 @@ public class PetService {
             deletarAnimal(estimacao);
     }
 
-    public void deletarAnimal(Pet petEstimacao){
+    public boolean deletarAnimal(Pet petEstimacao){
         for(Pet petNome : animais){
             if(petNome.getNome().equalsIgnoreCase(petEstimacao.getNome())){
                 animais.remove(petNome);
+                return true;
             }
         }
         throw new RuntimeException("Animail não localizado!");

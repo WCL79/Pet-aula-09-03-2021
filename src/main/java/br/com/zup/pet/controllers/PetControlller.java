@@ -64,12 +64,12 @@ public class PetControlller {
     /**
      * Médoto que faz Exclusão do Objeto criado por meio do médoto deletarAnimal cujo pertencente da classe
      * PetService
-     * @param nome
+     * @param nomeDoAnimal
      */
 
-    @DeleteMapping("/nome/{nome}/")
+    @DeleteMapping("{nomeDoAnimal}/")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletarAnimalPorNome(@PathVariable String nome){
-            petService.deletarAnimal(nome);
+    public void deletarAnimalPorNome(@PathVariable String nomeDoAnimal){
+            petService.deletarAnimal(nomeDoAnimal);
     }
 }
