@@ -6,6 +6,7 @@ import br.com.zup.pet.services.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 
@@ -25,18 +26,22 @@ public class PetControlller {
     }
 
     @GetMapping("{nome}/")
-    public Pet pesquisarPesquisarNomeDoDonoAnimail(@PathVariable String nomeAnimalDono){
-        return  petService.buscarNomeDono(nomeAnimalDono);
+    @ResponseStatus(HttpStatus.OK)
+    public Pet pesquisarPesquisarNomeDoDonoAnimail(@PathVariable String nome){
+        try {
+            return  petService.buscarAnimalOuDono(nome);
+        } catch (RuntimeException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
 
-    @GetMapping("{nomeAnimal}/")
-    public Pet pesquisarPesquisarNomeDoAnimail(@PathVariable String nomeAnimal){
-        return  petService.buscarNomeDono(nomeAnimal);
-    }
+    @GetMapping("/email/{email}")
+    public Pet pesquisarEmailDoDono(@PathVariable String email) {
+        try {
+            return petService.buscarEmailDoDono(email);
+        } catch (RuntimeException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
 
-    @GetMapping("{email}/")
-    public Pet pesquisarEmailDoDono(@PathVariable String emailDono){
-        return petService.buscarEmailDoDono(emailDono);
     }
-
 }

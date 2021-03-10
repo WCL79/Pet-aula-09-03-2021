@@ -12,6 +12,18 @@ public class Pet {
     private String tefoneDoDono;
 
     public Pet() {
+
+    }
+
+    public Pet(String nome, String raca, String especie, LocalDate dataDeEntrada,
+               String nomeDoDono, String emailDoDono, String tefoneDoDono) {
+        this.nome = nome;
+        this.raca = raca;
+        this.especie = especie;
+        DataDeEntrada = dataDeEntrada;
+        this.nomeDoDono = nomeDoDono;
+        EmailDoDono = emailDoDono;
+        this.tefoneDoDono = tefoneDoDono;
     }
 
     public String getNome() {
