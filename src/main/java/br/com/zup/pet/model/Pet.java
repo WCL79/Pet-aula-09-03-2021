@@ -1,13 +1,28 @@
 package br.com.zup.pet.model;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class Pet {
+    @NotEmpty(message = "Campo do nome não pode estar vazio!")
     private String nome;
+
+    @NotEmpty(message = "Campo da raça não pode ser vazio!")
+    @NotNull(message = "O campo raça não foi informada")
     private String raca;
+
+    @NotEmpty(message = "Campo da especie não pode ser vazio!")
+    @NotNull(message = "O campo especie não foi informada")
     private String especie;
+
     private LocalDate  DataDeEntrada;
+
+    @NotEmpty(message = "Campo do nome não pode estar vazio!")
     private String nomeDoDono;
+
+    @Email(message = "E-mail informado não é válido!")
     private String EmailDoDono;
     private String tefoneDoDono;
 
@@ -15,18 +30,7 @@ public class Pet {
 
     }
 
-    public Pet(String nome, String raca, String especie, LocalDate dataDeEntrada,
-               String nomeDoDono, String emailDoDono, String tefoneDoDono) {
-        this.nome = nome;
-        this.raca = raca;
-        this.especie = especie;
-        DataDeEntrada = dataDeEntrada;
-        this.nomeDoDono = nomeDoDono;
-        EmailDoDono = emailDoDono;
-        this.tefoneDoDono = tefoneDoDono;
-    }
-
-    public String getNome() {
+        public String getNome() {
         return nome;
     }
 

@@ -44,7 +44,7 @@ public class PetControlller {
         }
     }
 
-    @DeleteMapping("/delete/{nome}/")
+    @DeleteMapping("/nome/{nome}/")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletarAnimalPorNome(@PathVariable String nome){
         try{
