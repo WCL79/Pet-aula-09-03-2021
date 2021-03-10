@@ -32,4 +32,19 @@ public class PetService {
         }
         throw new RuntimeException("Não foram localizado!");
     }
+
+    public void deletarAnimal(String nome) throws RuntimeException{
+            Pet estimacao = new Pet();
+            estimacao.setNome(nome);
+            deletarAnimal(estimacao);
+    }
+
+    public void deletarAnimal(Pet petEstimacao){
+        for(Pet petNome : animais){
+            if(petNome.getNome().equalsIgnoreCase(petEstimacao.getNome())){
+                animais.remove(petNome);
+            }
+        }
+        throw new RuntimeException("Animail não localizado!");
+    }
 }
